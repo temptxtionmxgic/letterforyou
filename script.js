@@ -66,7 +66,7 @@ function createDoily(x) {
     doily.style.bottom = Math.random() * 20 + "px";
 
     // choppy rotation
-    const duration = 18 + Math.random() * 20;
+   const duration = 8 + Math.random() * 8;
     doily.style.animationDuration = duration + "s";
     doily.style.animationDirection =
         Math.random() > 0.5 ? "normal" : "reverse";
@@ -74,16 +74,17 @@ function createDoily(x) {
     doiliesContainer.appendChild(doily);
 }
 
-for (let i = 0; i < 6; i++) {
-    createDoily(i);
-}
-
-const spacing = 120; // overlap amount
+const spacing = 80; // overlap amount
 const count = Math.ceil(window.innerWidth / spacing) + 2;
 
 for (let i = 0; i < count; i++) {
     createDoily(i * spacing);
 }
+
+doily.style.bottom = Math.random() * 25 + "px";
+
+doily.style.transform = `scale(${0.9 + Math.random() * 0.2})`;
+
 
 // Logic to move the NO btn
 

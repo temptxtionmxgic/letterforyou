@@ -195,7 +195,7 @@ display: inline-block;
 
 .doily {
     position: relative;
-    opacity: 0.18;
+    opacity: 0.35;
     transform-origin: center center;
     animation-name: spin-choppy;
     animation-timing-function: steps(12); /* ← choppy / clay feel */
