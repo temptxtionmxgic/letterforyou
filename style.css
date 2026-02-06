@@ -188,12 +188,11 @@ display: inline-block;
     bottom: -120px;
     left: 0;
     width: 100vw;
-    height: 240px; /* important */
+    height: 240px;
     pointer-events: none;
     z-index: 3;
     overflow: hidden;
 
-    #doilies {
     -webkit-mask-image: linear-gradient(
         to top,
         black 0%,
@@ -207,6 +206,7 @@ display: inline-block;
         transparent 100%
     );
 }
+
 
 .doily {
     position: absolute;
