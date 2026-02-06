@@ -8,7 +8,7 @@ const title = document.getElementById("letter-title");
 const catImg = document.getElementById("letter-cat");
 const buttons = document.getElementById("letter-buttons");
 const finalText = document.getElementById("final-text");
-const noSound = new Audio("nope.mp3");
+const noSound = new Audio("whoosh.mp3");
 noSound.volume = 0.6;
 
 
