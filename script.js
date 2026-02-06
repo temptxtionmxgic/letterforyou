@@ -94,6 +94,22 @@ noBtn.addEventListener("mouseover", () => {
 
 // YES is clicked
 
+function typeText(element, text, speed = 40) {
+    element.textContent = "";
+    let i = 0;
+
+    const interval = setInterval(() => {
+        element.textContent += text[i];
+        i++;
+
+        if (i >= text.length) {
+            clearInterval(interval);
+        }
+    }, speed);
+}
+
+
+
 yesBtn.addEventListener("click", () => {
     title.textContent = "Yippee!";
 
@@ -104,4 +120,8 @@ yesBtn.addEventListener("click", () => {
     buttons.style.display = "none";
 
     finalText.style.display = "block";
+    typeText(
+        finalText,
+        "Good choice! Happy Valentine's Day 💗 Be ready for a million dates."
+    );
 });

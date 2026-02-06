@@ -108,6 +108,12 @@ p {
     position: relative;
 }
 
+.btn:hover {
+    transform: scale(1.08);
+    transition: transform 0.2s ease;
+}
+
+
 .no-wrapper{
     position:relative;
 }
