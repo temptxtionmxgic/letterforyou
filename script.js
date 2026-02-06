@@ -51,6 +51,38 @@ function createHeart() {
 
 setInterval(createHeart, 300);
 
+const doiliesContainer = document.getElementById("doilies");
+
+function createDoily(index) {
+    const doily = document.createElement("img");
+    doily.className = "doily";
+    doily.src = "doily.png";
+
+    // size variation
+    const size = 140 + Math.random() * 80;
+    doily.style.width = size + "px";
+
+    // overlap positioning
+    doily.style.marginLeft = index === 0 ? "0px" : "-60px";
+
+    // stagger vertically for layered feel
+    doily.style.bottom = Math.random() * 20 + "px";
+
+    // different speeds
+    const duration = 18 + Math.random() * 20;
+    doily.style.animationDuration = duration + "s";
+
+    // alternate direction
+    doily.style.animationDirection =
+        Math.random() > 0.5 ? "normal" : "reverse";
+
+    doiliesContainer.appendChild(doily);
+}
+
+for (let i = 0; i < 6; i++) {
+    createDoily(i);
+}
+
 // Logic to move the NO btn
 
 noBtn.addEventListener("mouseover", () => {

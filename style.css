@@ -182,3 +182,35 @@ display: inline-block;
         transform: scale(0.85);
     }
 }
+#doilies {
+    position: fixed;
+    bottom: -40px; /* push slightly off-screen for softness */
+    left: 0;
+    width: 100%;
+    height: 220px;
+    pointer-events: none;
+    z-index: 3; /* above bg, below hearts */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: -40px; /* overlap */
+}
+
+.doily {
+    position: relative;
+    opacity: 0.18;
+    transform-origin: center center;
+    animation-name: spin-choppy;
+    animation-timing-function: steps(12); /* ← choppy / clay feel */
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin-choppy {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
