@@ -170,3 +170,9 @@ display: inline-block;
         transform: translateY(120vh) rotate(360deg);
     }
 }
+@media (max-height: 800px), (max-width: 1200px) {
+    #envelope-container,
+    #letter-container {
+        transform: scale(0.85);
+    }
+}
