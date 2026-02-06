@@ -53,26 +53,21 @@ setInterval(createHeart, 300);
 
 const doiliesContainer = document.getElementById("doilies");
 
-function createDoily(index) {
+function createDoily(x) {
     const doily = document.createElement("img");
     doily.className = "doily";
     doily.src = "doily.png";
 
-    // size variation
     const size = 140 + Math.random() * 80;
     doily.style.width = size + "px";
 
-    // overlap positioning
-    doily.style.marginLeft = index === 0 ? "0px" : "-60px";
-
-    // stagger vertically for layered feel
+    // position across the bottom
+    doily.style.left = x + "px";
     doily.style.bottom = Math.random() * 20 + "px";
 
-    // different speeds
+    // choppy rotation
     const duration = 18 + Math.random() * 20;
     doily.style.animationDuration = duration + "s";
-
-    // alternate direction
     doily.style.animationDirection =
         Math.random() > 0.5 ? "normal" : "reverse";
 
@@ -81,6 +76,13 @@ function createDoily(index) {
 
 for (let i = 0; i < 6; i++) {
     createDoily(i);
+}
+
+const spacing = 120; // overlap amount
+const count = Math.ceil(window.innerWidth / spacing) + 2;
+
+for (let i = 0; i < count; i++) {
+    createDoily(i * spacing);
 }
 
 // Logic to move the NO btn

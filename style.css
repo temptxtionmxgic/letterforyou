@@ -184,16 +184,13 @@ display: inline-block;
 }
 #doilies {
     position: fixed;
-    bottom: -40px; /* push slightly off-screen for softness */
+    bottom: -40px;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 220px;
     pointer-events: none;
-    z-index: 3; /* above bg, below hearts */
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: -40px; /* overlap */
+    z-index: 3;
+    overflow: hidden;
 }
 
 .doily {
