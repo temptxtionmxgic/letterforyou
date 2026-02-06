@@ -8,6 +8,9 @@ const title = document.getElementById("letter-title");
 const catImg = document.getElementById("letter-cat");
 const buttons = document.getElementById("letter-buttons");
 const finalText = document.getElementById("final-text");
+const noSound = new Audio("nope.mp3");
+noSound.volume = 0.6;
+
 
 // Click Envelope
 
@@ -41,6 +44,10 @@ noBtn.addEventListener("mouseover", () => {
 
     noBtn.style.transition = "transform 0.3s ease";
     noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+
+    // 🔊 play sound
+    const sound = noSound.cloneNode();
+    sound.play();
 });
 
 // Logic to make YES btn to grow
