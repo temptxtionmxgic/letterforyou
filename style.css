@@ -182,12 +182,13 @@ display: inline-block;
         transform: scale(0.85);
     }
 }
+
 #doilies {
     position: fixed;
-    bottom: -40px;
+    bottom: -120px;
     left: 0;
     width: 100vw;
-    height: 220px;
+    height: 360px; /* important */
     pointer-events: none;
     z-index: 3;
     overflow: hidden;
@@ -195,10 +196,10 @@ display: inline-block;
 
 .doily {
     position: absolute;
-    opacity: 0.45; /* much more visible */
-    transform-origin: center center;
+    opacity: 0.55; /* clearly visible */
+    transform-origin: 50% 50%;
     animation-name: spin-choppy;
-    animation-timing-function: steps(8); /* choppier */
+    animation-timing-function: steps(6); /* chunky scrapbook feel */
     animation-iteration-count: infinite;
 }
 

@@ -53,38 +53,42 @@ setInterval(createHeart, 300);
 
 const doiliesContainer = document.getElementById("doilies");
 
-function createDoily(x) {
+function createDoily(x, y) {
     const doily = document.createElement("img");
     doily.className = "doily";
     doily.src = "doily.png";
 
-    // BIGGER doilies
-    const size = 200 + Math.random() * 120;
+    // MUCH bigger
+    const size = 260 + Math.random() * 160; // 260–420px
     doily.style.width = size + "px";
 
     // position
     doily.style.left = x + "px";
-    doily.style.bottom = Math.random() * 20 + "px";
+    doily.style.bottom = y + "px";
 
-    // FASTER rotation
-    const duration = 5 + Math.random() * 5; // 5–10s
+    // faster rotation
+    const duration = 4 + Math.random() * 4; // 4–8s
     doily.style.animationDuration = duration + "s";
-
     doily.style.animationDirection =
         Math.random() > 0.5 ? "normal" : "reverse";
 
-    // subtle scale variance
+    // slight scale wobble
     doily.style.transform = `scale(${0.9 + Math.random() * 0.25})`;
 
     doiliesContainer.appendChild(doily);
 }
 
-
-const spacing = 60; // VERY tight overlap
+const spacing = 90; // VERY tight
 const count = Math.ceil(window.innerWidth / spacing) + 6;
 
+// bottom row
 for (let i = 0; i < count; i++) {
-    createDoily(i * spacing);
+    createDoily(i * spacing - 200, 0);
+}
+
+// second row slightly higher + offset
+for (let i = 0; i < count; i++) {
+    createDoily(i * spacing - 150, 80);
 }
 
 doily.style.bottom = Math.random() * 25 + "px";
