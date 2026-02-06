@@ -30,6 +30,27 @@ envelope.addEventListener("click", () => {
     }, 50);
 });
 
+const heartsContainer = document.getElementById("hearts");
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.textContent = "♡";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 4 + Math.random() * 6 + "s";
+    heart.style.fontSize = 16 + Math.random() * 24 + "px";
+    heart.style.opacity = Math.random() * 0.6 + 0.4;
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+}
+
+setInterval(createHeart, 300);
+
 // Logic to move the NO btn
 
 noBtn.addEventListener("mouseover", () => {

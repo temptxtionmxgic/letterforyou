@@ -5,10 +5,17 @@ body {
     justify-content: center;
     align-items: center;
     background-image: url("heart-bg.png");
-        background-size: cover;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     font-family: "Pixelify Sans", sans-serif;
+    position: relative;
+}
+
+#envelope-container,
+#letter-container {
+    position: relative;
+    z-index: 10;
 }
 
 /* Envelope Screen */
@@ -139,4 +146,26 @@ display: inline-block;
     padding: 10px 20px;
     background-color: rgba(255,240,240,0.5);
     border-radius: 12px;
+}
+#hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.heart {
+    position: absolute;
+    top: -10%;
+    font-size: 24px;
+    color: #ff6b9c;
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(120vh) rotate(360deg);
+    }
 }
