@@ -158,8 +158,8 @@ display: inline-block;
 .heart {
     position: absolute;
     top: -10%;
-    font-size: 24px;
-    color: #ff6b9c;
+    font-size: 36px;
+   color: rgba(255, 255, 255, 0.85);
     animation: fall linear infinite;
     opacity: 0.8;
 }
