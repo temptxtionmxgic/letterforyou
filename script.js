@@ -58,24 +58,30 @@ function createDoily(x) {
     doily.className = "doily";
     doily.src = "doily.png";
 
-    const size = 140 + Math.random() * 80;
+    // BIGGER doilies
+    const size = 200 + Math.random() * 120;
     doily.style.width = size + "px";
 
-    // position across the bottom
+    // position
     doily.style.left = x + "px";
     doily.style.bottom = Math.random() * 20 + "px";
 
-    // choppy rotation
-   const duration = 8 + Math.random() * 8;
+    // FASTER rotation
+    const duration = 5 + Math.random() * 5; // 5–10s
     doily.style.animationDuration = duration + "s";
+
     doily.style.animationDirection =
         Math.random() > 0.5 ? "normal" : "reverse";
+
+    // subtle scale variance
+    doily.style.transform = `scale(${0.9 + Math.random() * 0.25})`;
 
     doiliesContainer.appendChild(doily);
 }
 
-const spacing = 80; // overlap amount
-const count = Math.ceil(window.innerWidth / spacing) + 2;
+
+const spacing = 60; // VERY tight overlap
+const count = Math.ceil(window.innerWidth / spacing) + 6;
 
 for (let i = 0; i < count; i++) {
     createDoily(i * spacing);

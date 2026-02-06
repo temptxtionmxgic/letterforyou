@@ -194,13 +194,14 @@ display: inline-block;
 }
 
 .doily {
-    position: relative;
-    opacity: 0.35;
+    position: absolute;
+    opacity: 0.45; /* much more visible */
     transform-origin: center center;
     animation-name: spin-choppy;
-    animation-timing-function: steps(12); /* ← choppy / clay feel */
+    animation-timing-function: steps(8); /* choppier */
     animation-iteration-count: infinite;
 }
+
 
 @keyframes spin-choppy {
     from {
