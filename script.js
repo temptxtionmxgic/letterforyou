@@ -76,24 +76,27 @@ function createDoily(x, y) {
     doily.style.transform = `scale(${0.9 + Math.random() * 0.25})`;
 
     doiliesContainer.appendChild(doily);
+
+    // fade higher doilies slightly
+if (y > 0) {
+    doily.style.opacity = 0.25;
 }
 
-const spacing = 90; // VERY tight
-const count = Math.ceil(window.innerWidth / spacing) + 6;
+}
 
-// bottom row
+const spacing = 90;
+const count = Math.ceil(window.innerWidth / spacing) + 4;
+
+// main bottom row
 for (let i = 0; i < count; i++) {
-    createDoily(i * spacing - 200, 0);
+    createDoily(i * spacing - 180, 0);
 }
 
-// second row slightly higher + offset
+// partial second row (lighter, higher)
 for (let i = 0; i < count; i++) {
-    createDoily(i * spacing - 150, 80);
+    createDoily(i * spacing - 120, 70);
 }
 
-doily.style.bottom = Math.random() * 25 + "px";
-
-doily.style.transform = `scale(${0.9 + Math.random() * 0.2})`;
 
 
 // Logic to move the NO btn

@@ -188,15 +188,29 @@ display: inline-block;
     bottom: -120px;
     left: 0;
     width: 100vw;
-    height: 360px; /* important */
+    height: 240px; /* important */
     pointer-events: none;
     z-index: 3;
     overflow: hidden;
+
+    #doilies {
+    -webkit-mask-image: linear-gradient(
+        to top,
+        black 0%,
+        black 55%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to top,
+        black 0%,
+        black 55%,
+        transparent 100%
+    );
 }
 
 .doily {
     position: absolute;
-    opacity: 0.55; /* clearly visible */
+    opacity: 0.4; /* clearly visible */
     transform-origin: 50% 50%;
     animation-name: spin-choppy;
     animation-timing-function: steps(6); /* chunky scrapbook feel */
